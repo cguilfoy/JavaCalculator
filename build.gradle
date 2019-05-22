@@ -1,0 +1,29 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+repositories
+{
+	jcenter()
+}
+
+dependencies
+{
+	testCompile "junit:junit:4.12+"
+}
+
+test
+{
+	ignoreFailures = true
+}
+
+javadoc
+{
+	options.with
+	{
+		links 'https://docs.oracle.com/javase/8/docs/api/', 'gradle/javadocs/jdk'
+	}
+	
+	failOnError = false
+}
+
+build.dependsOn javadoc
